@@ -1,0 +1,80 @@
+.container_welcome {
+    width: 100%;
+    height: 95px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background-color: var(--black-color);
+    padding: 0px 30px;
+}
+.Title_welcome {
+    font-size: 1.7rem;
+    color: var(--white-color);
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Nunito', sans-serif;
+    margin-right: 25px;
+}
+@media only screen and (min-width: 700px) {
+    .Title_welcome  {
+        letter-spacing: 3px;
+        font-size: 2.5rem;
+    }
+}
+.container_Options {
+    width: 100%;
+    height: 38px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(230,0,0);
+    background: linear-gradient(90deg, rgba(230,0,0,1) 0%, rgba(0,0,0,1) 100%);
+}
+@media only screen and (max-width: 425px) {
+    .container_Options  {
+        position: fixed;
+        bottom: 0px;
+    }
+}
+.a_Home , .a_Notifications , .a_Profile  {
+    text-decoration: none;
+    color: var(--white-color);
+}
+.a_Home img, .a_Notifications img, .a_Profile img {
+    width: 18px;
+    margin-right: 4px;
+}
+.a_Home:hover, .a_Notifications:hover, .a_Profile:hover {
+    text-decoration: underline;
+}
+.Img_Logo {
+    width: 100%;
+    min-width: 120px;
+    max-width: 230px;
+}
+.h2_chooseSpecialty {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--black-color);
+    margin: 20px 0px;
+}
+.containerImgSpecialty {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.containerImgSpecialty img {
+    width: 95%;
+    height: 45%;
+    min-width: 280px;
+    max-width: 450px;
+    max-height: 250px;
+    min-height: 200px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+.containerImgSpecialty img:hover {
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
