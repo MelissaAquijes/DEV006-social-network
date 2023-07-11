@@ -1,4 +1,5 @@
-function login() {
+import { LoginWithGoogle } from "../firebase/firebase.js";
+function login(navigator) {
     const containerLogin = document.createElement('section');
     const divBackground = document.createElement('div');
     const blackTransparency = document.createElement('img');
@@ -85,6 +86,10 @@ function login() {
     createAccount.innerHTML = `<a href='register' id='linkCreateAccount'>Create Account</a>`
     forgotPassword.innerHTML = `<a href='password' id='linkForgotPassword'>Forgot your password?</a>`
     othersAccess.textContent = 'Or connect with';
+
+    imgIconGoogle.addEventListener('click', () => {
+        LoginWithGoogle(navigator);
+    });
 
     containerLogin.append(divBackground, blackTransparency, sectionForm);
     sectionForm.append(imgLogo, form, sectionLinks, sectionConnectWith, sectionIconApp )
