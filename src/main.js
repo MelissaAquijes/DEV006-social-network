@@ -1,5 +1,10 @@
-// Este es el punto de entrada de tu aplicacion
+import { navigateTo } from "./lib/router";
 
-import { myFunction } from './lib/index.js';
 
-myFunction();
+const defaultRoute = '/';
+
+window.onpopstate = () => {         //se activa cuando hay un cambio de estado explicito o simplemente nos vamos atras y delante
+    navigateTo(window.location.pathname);
+};
+
+navigateTo(window.location.pathname || defaultRoute);
