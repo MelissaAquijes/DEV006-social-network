@@ -2,9 +2,11 @@ import {firebaseConfig} from "./config.js"
 import { initializeApp } from "firebase/app";
 import { getAuth,
          GoogleAuthProvider,
-         signInWithPopup} from "firebase/auth";
+         signInWithPopup,
+         signOut} from "firebase/auth";
 
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore,
+         addDoc } from 'firebase/firestore';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -48,3 +50,11 @@ export   const LoginWithGoogle= async(navegateCallback)=> {
             uid: currentUserUid,
         });
     };
+
+
+    // ---------- Cerrar sesión ----------
+export const logout = async (callbackLogout) => {
+    await signOut(auth);
+    callbackLogout('/');
+    console.log('cerrando sesión')
+}
