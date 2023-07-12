@@ -1,0 +1,308 @@
+.containerWall {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../Assets/vintage.jpg);
+    background-size: cover;
+}
+.divContainerProfile {
+    width: 100%;
+    height: 95px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background-color: var(--black-color);
+    padding: 0px 30px;
+}
+.titleWelcome {
+    font-size: 1.7rem;
+    color: var(--white-color);
+    font-weight: 400;
+    text-align: start;
+    font-family: 'Nunito', sans-serif;
+    margin-right: 25px;
+}
+@media only screen and (min-width: 700px) {
+    .titleWelcome  {
+        letter-spacing: 3px;
+        font-size: 2.5rem;
+    }
+}
+.img_logo {
+    width: 100%;
+    min-width: 120px;
+    max-width: 230px;
+}
+.containerWriteWall {
+    width: 90%;
+    height: 15vh;
+    min-width: 280px;
+    max-width: 650px;
+    margin-top: 25px;
+    background: rgb(230,0,0);
+    background: linear-gradient(90deg, rgba(230,0,0,1) 0%, rgba(0,0,0,1) 100%);
+    border-radius: 10px;
+}
+.divContainerButton {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.imgProfile2 {
+    width: 38px;
+    border-radius: 25px;
+}
+.buttonWrite {
+    width: 80%;
+    height: 28px;
+    min-width: 230px;
+    max-width: 700px;
+    background: var(--white-color);
+    border-radius: 20px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    color: var(--lightGrey-color);
+    cursor: pointer;
+}
+.divContainerOptions {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--white-color);
+}
+.iconVideo {
+    width: 25px;
+}
+.iconPicture {
+    width: 25px;
+    margin: 0px 15% 0px;
+}
+.iconPoll {
+    width: 25px;
+}
+.articlePost {
+    width: 90%;
+    min-width: 280px;
+    max-width: 980px;
+    height: auto;
+    border: solid 10px var(--black-color);
+    margin: 35px 0px 50px;
+    border-radius: 10px;
+}
+
+/* Creación de post */
+.postContainer{
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px 10px 18px;
+    border-radius: 10px;
+}
+.divContainerUser {
+    width: 100%;
+    height: 60px;
+    padding: 0px 20px 0px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    position: relative;
+}
+.imgProfile3 {
+    width: 40px;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+.nameUser {
+    font-size: 1.6rem;
+    font-family: 'Nunito', sans-serif;
+    color: var(--white-color);
+}
+@media only screen and (min-width: 500px) {
+    .nameUser  {
+        font-size: 1.8rem;
+    }
+}
+.postIconOptions {
+    width: 25px;
+    cursor: pointer;
+}
+.postIconOptions:hover {
+    background-color: #3a3b3d;
+    border-radius: 50px;
+}
+.postMenuOptions{
+    background-color: #242526;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+    right: 48px;
+    bottom: -40px;
+    visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #18191a;
+    padding: 5px 5px;
+}
+.postMenuOptions div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+.postMenuOptions div:hover{
+    background-color: #3a3b3d;
+    border-radius: 5px;
+}
+.postMenuOptions img{
+    height:15px ;
+}
+.postMenuOptions a{
+    color: var(--white-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+}
+.buttonDelete{
+    z-index: 1;
+}
+.postUser {
+    font-size: 1.4rem;
+    text-align: start;
+    padding: 20px;
+    color: var(--white-color);
+}
+.ContainerDetailsPadre{
+    width: 100%;
+    height: 50px;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+}
+.containerDetails {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #414243;
+}
+.number {
+    font-size: 1.2rem;
+    color: var(--white-color);
+    font-family: 'Nunito', sans-serif;
+    margin-right: 1.3px;
+}
+.iconHeart {
+    width: 20px;
+}
+.iLike {
+    font-size: 1.1rem;
+    color: var(--white-color);
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    padding: 5px;
+}
+.iLike:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+.iconComment {
+    width: 20px;
+    margin-right: 1.3px;
+    margin-left: 9%;
+}
+.comment {
+    font-size: 1.1rem;
+    color: var(--white-color);
+    font-family: 'Nunito', sans-serif;
+    margin-right: 9%;
+}
+.iconShare {
+    width: 20px;
+    margin-right: 1.3px;
+}
+.share {
+    font-size: 1.1rem;
+    color: var(--white-color);
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Pop up */
+.modalContainerCreatePost {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    z-index: 1;
+}
+.active {
+    visibility: visible;
+}
+.popUp{
+    width: 85%;
+    height: auto;
+    min-width: 260px;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.titleCreatePost {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--black-color);
+}
+.modalClose {
+    width: 10%;
+    min-width: 25px;
+    max-width: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.formCreatePost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputCreatePost {
+    width: 100%;
+    height: 25vh;
+    min-width: 200px;
+    max-width: 500px;
+    text-indent: 5px;
+    resize: none;
+    padding: 10px;
+}
+.btnCreatePost {
+    width: 245px;
+    height: 35px;
+    margin-top: 20px;
+    background-color: var(--red-color);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white-color);
+    cursor:pointer
+}
+.btnCreatePost:hover {
+    background: hsla(0, 79%, 45%, 1);
+    background: linear-gradient(135deg, hsla(0, 79%, 45%, 1) 0%, hsla(274, 65%, 12%, 1) 100%);
+}
