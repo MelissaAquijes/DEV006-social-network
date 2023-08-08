@@ -51,6 +51,8 @@ export   const LoginWithGoogle= async(navegateCallback)=> {
         });
     };
 
+    // ---------- Trae toda la coleccion Google en tiempo real ----------
+    export const onGetUserData = (callback) => onSnapshot(collection(db,'Google'),callback);
 
     // ---------- Cerrar sesión ----------
 export const logout = async (callbackLogout) => {

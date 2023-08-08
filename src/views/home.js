@@ -1,4 +1,5 @@
-function home() {
+import { onGetUserData } from "../firebase/firebase";
+function home(navigator) {
     const containerHome = document.createElement('div');
     const container_welcome = document.createElement('section');
     const Title_welcome = document.createElement('div');
@@ -59,12 +60,14 @@ function home() {
     imgProducts.setAttribute('src', '../assets/products.jpg');
     imgProducts.setAttribute('alt', 'Products image');
 
-    Title_welcome.innerHTML = 'HELLO, WELCOME!' ;
     h2_chooseSpecialty.textContent = 'CHOOSE SPECIALTY';
     a_Home.innerHTML = `<img src="../Assets/home.png" alt="House icon">Home</a>`
     a_Notifications.innerHTML = `<img src="../Assets/notifications.png" alt="Bell icon">Notifications</a>`
     a_Profile.innerHTML = `<img src="../Assets/user.png" alt="User icon">Profile</a>`
 
+    imgMakeUp.addEventListener('click', () => {
+        navigator('./wall')
+    });
     containerHome.append(container_welcome, container_Options, h2_chooseSpecialty, containerImgSpecialty);
     container_welcome.append(Title_welcome, Img_Logo);
     container_Options.append(a_Home, a_Notifications, a_Profile);
