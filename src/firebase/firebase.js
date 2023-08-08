@@ -65,6 +65,9 @@ export const deletePost = id => deleteDoc(doc(db,'Posts',id));
 // ---------- Trae solo el elemento seleccionado por su ID de la coleccion Posts ----------
 export const getPost = id => getDoc(doc(db,'Posts',id))
 
+// ---------- Actualiza el elemento seleccionado por su ID de la coleccion Posts ----------
+export const updatePost = (id,newfields) => updateDoc(doc(db,'Posts',id), newfields)
+
 // ---------- Cerrar sesión ----------
 export const logout = async (callbackLogout) => {
     await signOut(auth);
