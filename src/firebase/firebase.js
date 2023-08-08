@@ -59,6 +59,9 @@ export const savePosts = (description,nameUser,imageUser,likeCounter) => addDoc(
 // ---------- Trae toda la coleccion Posts en tiempo real ----------
 export const onGetPosts = (callback) => onSnapshot(collection(db,'Posts'),callback);
 
+// ---------- Borra el elemento seleccionado por su ID de la coleccion Posts ----------
+export const deletePost = id => deleteDoc(doc(db,'Posts',id));
+
 // ---------- Cerrar sesión ----------
 export const logout = async (callbackLogout) => {
     await signOut(auth);
