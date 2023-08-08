@@ -62,6 +62,9 @@ export const onGetPosts = (callback) => onSnapshot(collection(db,'Posts'),callba
 // ---------- Borra el elemento seleccionado por su ID de la coleccion Posts ----------
 export const deletePost = id => deleteDoc(doc(db,'Posts',id));
 
+// ---------- Trae solo el elemento seleccionado por su ID de la coleccion Posts ----------
+export const getPost = id => getDoc(doc(db,'Posts',id))
+
 // ---------- Cerrar sesión ----------
 export const logout = async (callbackLogout) => {
     await signOut(auth);
