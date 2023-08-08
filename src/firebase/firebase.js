@@ -32,13 +32,12 @@ export   const LoginWithGoogle= async(navegateCallback)=> {
         if (user !==null) {
             userDataGoogle();
         } else {
-            // No hay usuario autenticado
             console.log("No hay usuario autenticado.");
         }
 
         navegateCallback('/home');
     } catch (error) {
-        console.error('Error de autenticación:', error);
+        console.error('Authentication Error:', error);
     }
 };
 
@@ -51,12 +50,14 @@ export   const LoginWithGoogle= async(navegateCallback)=> {
         });
     };
 
-    // ---------- Trae toda la coleccion Google en tiempo real ----------
-    export const onGetUserData = (callback) => onSnapshot(collection(db,'Google'),callback);
+// ---------- Trae toda la colección Google en tiempo real ----------
+export const onGetUserData = (callback) => onSnapshot(collection(db,'Google'),callback);
 
-    // ---------- Cerrar sesión ----------
+// ---------- Almacena y crea la colección Posts en firestore ----------
+export const savePosts = (description,nameUser,imageUser,likeCounter) => addDoc(collection(db, "Posts"), { description , nameUser, imageUser,likeCounter});
+
+// ---------- Cerrar sesión ----------
 export const logout = async (callbackLogout) => {
     await signOut(auth);
     callbackLogout('/');
-    console.log('cerrando sesión')
 }

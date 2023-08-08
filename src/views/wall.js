@@ -1,3 +1,4 @@
+import { savePosts,onGetPosts,onGetUserData,deletePost,getPost,updatePost} from "../firebase/firebase";
 function wall() {
     const containerWall = document.createElement('section');
     const divContainerProfile = document.createElement('div');
