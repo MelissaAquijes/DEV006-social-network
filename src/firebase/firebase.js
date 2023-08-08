@@ -56,6 +56,9 @@ export const onGetUserData = (callback) => onSnapshot(collection(db,'Google'),ca
 // ---------- Almacena y crea la colección Posts en firestore ----------
 export const savePosts = (description,nameUser,imageUser,likeCounter) => addDoc(collection(db, "Posts"), { description , nameUser, imageUser,likeCounter});
 
+// ---------- Trae toda la coleccion Posts en tiempo real ----------
+export const onGetPosts = (callback) => onSnapshot(collection(db,'Posts'),callback);
+
 // ---------- Cerrar sesión ----------
 export const logout = async (callbackLogout) => {
     await signOut(auth);
