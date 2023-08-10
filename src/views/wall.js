@@ -100,6 +100,15 @@ function wall() {
         })
     });
 
+    //Create Post
+    buttonWrite.addEventListener('click', () => {
+        modalContainerCreatePost.classList.add('active');
+        titleCreatePost.textContent = 'CREATE POST';
+        btnCreatePost.textContent = 'Save'
+        inputCreatePost.value = "";
+        editStatus = false;
+    });
+
 
     containerWall.append(divContainerProfile,container_Options, containerWriteWall,modalContainerCreatePost, articlePost);
     divContainerProfile.append(titleWelcome, img_logo);
