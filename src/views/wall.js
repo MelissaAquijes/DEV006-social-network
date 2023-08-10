@@ -109,6 +109,10 @@ function wall() {
         editStatus = false;
     });
 
+    modalClose.addEventListener('click', () => {
+        modalContainerCreatePost.classList.remove('active');
+    });
+
 
     containerWall.append(divContainerProfile,container_Options, containerWriteWall,modalContainerCreatePost, articlePost);
     divContainerProfile.append(titleWelcome, img_logo);
