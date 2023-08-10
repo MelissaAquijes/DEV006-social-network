@@ -113,6 +113,124 @@ function wall() {
         modalContainerCreatePost.classList.remove('active');
     });
 
+    //Trayendo datos en tiempo real con onGetPosts
+    onGetPosts((responsePosts) =>{
+        let html = ""
+
+        responsePosts.forEach(element =>{
+            const post=element.data()
+
+            html +=
+            `<div class="postContainer">
+                    <div class="divContainerUser" id="divContenedorxD">
+                            <img class="imgProfile3" src="${post.imageUser}" alt="Scissors and comb profile icon">
+                            <h2 class="nameUser">${post.nameUser}</h2>
+                            <img class="postIconOptions"  src="../assets/icon-three-dots.png" alt="Ellipsis icon">
+                            <div class="postMenuOptions">
+                                <div class="buttonEdit" data-id="${element.id}">
+                                    <a data-id="${element.id}">Edit</a>
+                                    <img src="../assets/edit.png" data-id="${element.id}">
+                                </div>
+                                <div class="buttonDelete" data-id="${element.id}">
+                                    <a data-id="${element.id}">Delete</a>
+                                    <img src="../assets/delete.ico" data-id="${element.id}">
+                                </div>
+                            </div>
+                    </div>
+
+                    <p class="postUser" id="idDescriptionPost">${post.description}</p>
+
+                    <div class="ContainerDetailsPadre">
+                        <div class="containerDetails">
+                            <span class="number" data-id="${element.id}">${post.likeCounter}</span>
+                            <img class="iconHeart" src="../assets/icon-heart-white.png" alt="Heart icon">
+                            <span class="iLike" data-id="${element.id}">I like</span>
+                            <img class="iconComment" src="../assets/icon-comment.png" alt="Feedback icon">
+                            <p class="comment">Comment</p>
+                            <img class="iconShare" src="../assets/icon-share.png" alt="Share icon">
+                            <p class="share">Share</p>
+                        </div>
+                    </div>
+            </div>`
+        });
+
+        articlePost.innerHTML = html;
+
+        const btnsOptions =articlePost.querySelectorAll('.postIconOptions');
+        const menusOptions =articlePost.querySelectorAll('.postMenuOptions');
+        const btnsEdit=articlePost.querySelectorAll('.buttonEdit');
+        const btnsDelete =articlePost.querySelectorAll('.buttonDelete')
+        const btnsIlike = articlePost.querySelectorAll('.iLike')
+        const numbersLike = articlePost.querySelectorAll('.number')
+        const iconsHeart = articlePost.querySelectorAll('.iconHeart')
+
+        //boton contador de LIKES
+        btnsIlike.forEach((btnIlike,indexLike) =>{
+            let index = indexLike;
+
+            btnIlike.addEventListener('click',(e) =>{
+                numbersLike.forEach(async(number,i) =>{
+
+                    if(index === i){
+                        const post=  await getPost(e.target.dataset.id);//traemos el post por su Id de FireStore en Bruto
+                        const postParsed = post.data() // parseamos el post
+                        likeContador=Number(postParsed.likeCounter)+1
+
+                        updatePost(e.target.dataset.id,{likeCounter:likeContador})
+                    }
+                })
+
+                iconsHeart.forEach((icon,indexIcon) =>{
+                    if(index === indexIcon){
+                        icon.removeAttribute("src");
+                        icon.setAttribute('src', '../Assets/icon-heart-red.png');
+                    }
+                });
+            });
+        });
+
+        //botones para EDITAR y ELIMINAR
+        btnsOptions.forEach((btn,i) =>{
+            let index=i;
+            btn.addEventListener("click",()=>{ //desplegar y ocultar modal options (edit-delete)
+                menusOptions.forEach((element,i) => {
+                    if(index === i){
+                        element.classList.toggle('active');
+                    }  else{
+                        element.classList.remove('active');
+                    }
+                })
+            })
+
+            btnsEdit.forEach((btnEdit,indexEdit) =>{
+                btnEdit.addEventListener("click",async(event) =>{
+                    if(index === indexEdit){
+
+                        const post = await getPost(event.target.dataset.id); //traemos el post por su Id de FireStore en Bruto
+                        const postParsed =(post.data());
+                        modalContainerCreatePost.classList.add('active');
+                        titleCreatePost.textContent = 'EDIT POST';
+                        btnCreatePost.textContent = 'Update'
+                        inputCreatePost.value = postParsed.description
+                        editStatus = true
+                        id = post.id
+                    }
+                    menusOptions.forEach(element2 =>{
+                        element2.classList.remove('active')
+                    })
+                })
+            })
+
+            btnsDelete.forEach((btnDelete,indexDelete) =>{
+                btnDelete.addEventListener("click",(eventDelete) =>{
+                    if(index === indexDelete){
+                        deletePost(eventDelete.target.dataset.id)
+                    }
+                })
+            })
+        })
+    });
+
 
     containerWall.append(divContainerProfile,container_Options, containerWriteWall,modalContainerCreatePost, articlePost);
     divContainerProfile.append(titleWelcome, img_logo);
