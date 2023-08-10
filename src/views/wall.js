@@ -231,6 +231,18 @@ function wall() {
         })
     });
 
+    //Guardando datos en fireStore
+    formCreatePost.addEventListener('submit',(e) =>{
+        e.preventDefault();
+
+         if(editStatus){ //cuando le damos click en el boton Edit -->editStatus sera true
+            updatePost(id,{description:inputCreatePost.value})
+        } else{  //cuando le damos click en el boton buttonWrite-->editStatus sera false
+            savePosts(inputCreatePost.value,userName,userPhoto,likeContador)
+        }
+
+        modalContainerCreatePost.classList.remove('active');
+    });
 
     containerWall.append(divContainerProfile,container_Options, containerWriteWall,modalContainerCreatePost, articlePost);
     divContainerProfile.append(titleWelcome, img_logo);
