@@ -6,7 +6,13 @@ import { getAuth,
          signOut} from "firebase/auth";
 
 import { getFirestore,
-         addDoc } from 'firebase/firestore';
+         collection,
+         addDoc,
+         onSnapshot,
+         deleteDoc,
+         doc,
+         getDoc,
+         updateDoc, } from 'firebase/firestore';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
