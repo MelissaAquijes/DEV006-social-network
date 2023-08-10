@@ -81,6 +81,26 @@ function wall() {
     inputCreatePost.setAttribute('id', 'inputDescriptionPost');
     btnCreatePost.setAttribute('type', 'submit');
 
+    let editStatus = false;
+    let id = "";
+    let userName = "";
+    let userPhoto = "";
+    let likeContador = 0;
+
+    //Trayendo datos en tiempo real del usuario de la coleccion Google (nombre y foto)
+    onGetUserData((responseUserData)=>{
+
+        responseUserData.forEach(element=>{
+            const data=element.data()
+
+            userName=data.name;
+            userPhoto=data.photo;
+            imgProfile2.setAttribute('src', userPhoto);
+            titleWelcome.innerText = 'Hello Welcome! '+ userName;
+        })
+    });
+
+
     containerWall.append(divContainerProfile,container_Options, containerWriteWall,modalContainerCreatePost, articlePost);
     divContainerProfile.append(titleWelcome, img_logo);
     container_Options.append(a_Home, a_Notifications, a_Profile);
