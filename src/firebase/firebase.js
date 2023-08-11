@@ -26,7 +26,7 @@ let currentUserUid ='';
 let currentUserEmail ='';
 
 // ---------- Inicio de sesión con Google ----------
-export   const LoginWithGoogle= async(navegateCallback)=> {
+export const LoginWithGoogle = async(navegateCallback) => {
     try {
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
@@ -35,13 +35,12 @@ export   const LoginWithGoogle= async(navegateCallback)=> {
         currentUserUid = user.uid
         currentUserEmail = user.email
 
-        if (user !==null) {
+        if (user !== null) {
             userDataGoogle();
+            navegateCallback('/home');
         } else {
-            console.log("No hay usuario autenticado.");
+            navegateCallback('/error');
         }
-
-        navegateCallback('/home');
     } catch (error) {
         console.error('Authentication Error:', error);
     }

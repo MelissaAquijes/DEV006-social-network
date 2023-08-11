@@ -65,9 +65,19 @@ function home(navigator) {
     a_Notifications.innerHTML = `<img src="../Assets/notifications.png" alt="Bell icon">Notifications</a>`
     a_Profile.innerHTML = `<img src="../Assets/user.png" alt="User icon">Profile</a>`
 
-    imgMakeUp.addEventListener('click', () => {
-        navigator('./wall')
+    //trayendo datos del usuario de la coleccion Google (nombre)
+    onGetUserData((responseUserData)=>{
+        responseUserData.forEach(element => {
+            const data = element.data()  
+            const userName = data.name;
+            Title_welcome.innerText = 'HELLO WELCOME! '+userName;
+        })
     });
+
+    imgMakeUp.addEventListener('click', () => {
+        navigator('/wall')
+    });
+
     containerHome.append(container_welcome, container_Options, h2_chooseSpecialty, containerImgSpecialty);
     container_welcome.append(Title_welcome, Img_Logo);
     container_Options.append(a_Home, a_Notifications, a_Profile);
