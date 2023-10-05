@@ -1,4 +1,4 @@
-# "HAKU"
+# Red Social "HAKU"
 
 ## Índice
 
@@ -112,10 +112,10 @@ este adentrando por primera vez al mundo de la belleza.
  ![Sitio Principal](./src/assets/pagina1.png)
 
 
- ![Sitio Principal](./src/Assets/pagina2.png)
+ ![Sitio Principal](./src/assets/pagina2.png)
 
 
- ![Sitio Principal](./src/Assets/pagina3.png)
+ ![Sitio Principal](./src/assets/pagina3.png)
 
 ### Mobile
 ![Sitio Principal](./src/assets/mobile.png)
