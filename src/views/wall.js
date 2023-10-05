@@ -35,11 +35,10 @@ function wall() {
     iconPoll.classList.add('iconPoll');
     articlePost.classList.add('articlePost');
 
-    img_logo.setAttribute('src', '../Assets/logo-haku-black.png');
+    img_logo.setAttribute('src', '../assets/logo-haku-black.png');
     img_logo.setAttribute('alt', 'Haku Social Network Logo');
     a_Home.setAttribute('href', '/home');
     a_Profile.setAttribute('href', '/profile');
-    imgProfile2.setAttribute('src', '../Assets/561.ico');
     imgProfile2.setAttribute('alt', 'User profile photo');
     buttonWrite.setAttribute('type', 'button');
     iconVideo.setAttribute('src', '../assets/icon-video.png');
@@ -50,7 +49,7 @@ function wall() {
     iconPoll.setAttribute('alt', 'Purvey icon');
 
 
-    a_Home.innerHTML = `<img src="../Assets/home.png" alt="House icon">Home</a>`
+    a_Home.innerHTML = `<img src="../assets/home.png" alt="House icon">Home</a>`
     a_Profile.innerHTML = `<img src="../Assets/user.png" alt="User icon">Profile</a>`
     buttonWrite.textContent = 'Write something...';
 

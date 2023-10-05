@@ -56,13 +56,13 @@ function login(navigator) {
     imgLogo.setAttribute('src', '../assets/logo-haku-white.png');
     imgLogo.setAttribute('alt', 'Haku Social Network Logo');
     form.setAttribute('id', 'signIn-form');
-    inputIconUser.setAttribute('src', '../Assets/icon-user.png')
+    inputIconUser.setAttribute('src', '../assets/icon-user.png')
     inputIconUser.setAttribute('alt', 'User icon')
     inputEmail.setAttribute('id', 'inputEmail');
     inputEmail.setAttribute('type', 'email');
     inputEmail.setAttribute('placeholder', 'EMAIL');
     inputEmail.setAttribute('required', '');
-    inputIconPassword.setAttribute('src', '../Assets/icon-password.png');
+    inputIconPassword.setAttribute('src', '../assets/icon-password.png');
     inputIconPassword.setAttribute('alt', 'Secret key icon');
     inputPassword.setAttribute('id', 'inputPassword');
     inputPassword.setAttribute('type', 'password');
