@@ -1,29 +1,35 @@
-:root  {
-    --red-color: #CD1818;
+:root {
+    --pink-color: #CE0056;
+    --lightPink-color: #FF4888;
     --black-color: #111111;
     --white-color: #FFFFFF;
     --lightGrey-color: #7F8487;
 }
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+
 html {
     font-size: 62.5%;
     font-family: 'Nunito', sans-serif;
     font-family: 'Poppins', sans-serif;
 }
+
 body {
     overflow-x: hidden;
 }
+
 .containerLogin {
     width: 100%;
-    height: 100;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .divBackground {
     width: 100%;
     height: 100vh;
@@ -33,6 +39,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .blackTransparency {
     position: absolute;
     width: 100%;
@@ -41,6 +48,7 @@ body {
     background: rgba(0, 0, 0, 0.17);
     border: none;
 }
+
 .sectionForm {
     width: 100%;
     height: 100%;
@@ -52,23 +60,29 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .imgLogo {
-    width: 260px;
-    height: 55px;
+    width: 250px;
+    height: 50px;
     margin-bottom: 20px;
 }
+
 .form {
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.divInputUser, .divInputPassword {
+
+.divInputUser,
+.divInputPassword {
     width: 100%;
     display: flex;
     align-items: end;
 }
-.spanIconUser, .spanIconPassword {
+
+.spanIconUser,
+.spanIconPassword {
     width: 37px;
     height: 40px;
     display: flex;
@@ -79,11 +93,15 @@ body {
     border-style: solid;
     border-color: var(--white-color);
 }
-.inputIconUser, .inputIconPassword {
+
+.inputIconUser,
+.inputIconPassword {
     width: 25px;
     height: 25px;
 }
-.inputEmail, .inputPassword {
+
+.inputEmail,
+.inputPassword {
     width: 100%;
     height: 40px;
     font-family: 'Nunito', sans-serif;
@@ -93,17 +111,27 @@ body {
     outline: none;
     padding-left: 6px;
 }
-.inputEmail::placeholder, .inputPassword::placeholder {
+
+.inputEmail::placeholder,
+.inputPassword::placeholder {
     color: var(--lightGrey-color);
     font-family: 'Nunito', sans-serif;
     font-size: 1.0rem;
     font-weight: 600;
 }
+
+.msgEmailPassword {
+    font-size: 1.2rem;
+    color: red;
+    padding: 0px 15px;
+    text-align: center;
+}
+
 .buttonSignIn {
     width: 100%;
     height: 40px;
     margin-top: 62px;
-    background-color: var(--red-color);
+    background-color: var(--pink-color);
     border-radius: 5px;
     border: none;
     font-family: 'Nunito', sans-serif;
@@ -111,38 +139,50 @@ body {
     font-weight: 700;
     color: var(--white-color);
 }
+
 .buttonSignIn:hover {
-    background: hsla(0, 79%, 45%, 1);
-    background: linear-gradient(135deg, hsla(0, 79%, 45%, 1) 0%, hsla(274, 65%, 12%, 1) 100%);
+    background-color: var(--lightPink-color);
 }
+
 .sectionLinks {
     display: inline-flex;
     margin-top: 8px;
 }
-.createAccount a, .forgotPassword a {
+
+.createAccount a,
+.forgotPassword a {
     text-decoration: none;
     color: var(--white-color);
     font-family: 'Nunito', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
+
 .createAccount {
     margin-right: 30px;
 }
+
 .forgotPassword a {
     font-style: italic;
 }
-.createAccount a:hover, .forgotPassword a:hover {
-    color: var(--red-color);
+
+.createAccount a:hover,
+.forgotPassword a:hover {
+    color: var(--pink-color);
 }
+
 .sectionConnectWith {
     display: flex;
     align-items: center;
     margin: 43px 0px 15px;
 }
-.line1, .line2 {
+
+.line1,
+.line2 {
     width: 80px;
     border-top: 1px solid var(--white-color)
 }
+
 .othersAccess {
     padding: 0px 15px;
     color: var(--white-color);
@@ -150,17 +190,20 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
 }
+
 .sectionIconApp {
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
+
+.imgIconFacebook,
 .imgIconGoogle {
-    margin: 0px 35px;
-}
-.imgIconFacebook, .imgIconGoogle, .imgIconTwitter {
     width: 40px;
     cursor: pointer;
 }
-.imgIconFacebook:hover, .imgIconGoogle:hover, .imgIconTwitter:hover {
-    transform:scale(1.1);
+
+.imgIconFacebook:hover,
+.imgIconGoogle:hover {
+    transform: scale(1.1);
 }

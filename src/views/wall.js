@@ -2,11 +2,10 @@ import { savePosts,onGetPosts,onGetUserData,deletePost,getPost,updatePost} from 
 function wall() {
     const containerWall = document.createElement('section');
     const divContainerProfile = document.createElement('div');
-    const titleWelcome = document.createElement('p');
     const img_logo = document.createElement('img');
+    const titleWelcome = document.createElement('p');
     const container_Options = document.createElement('section');
     const a_Home = document.createElement('a');
-    const a_Notifications = document.createElement('a');
     const a_Profile = document.createElement('a');
     const containerWriteWall = document.createElement('section');
     const divContainerButton = document.createElement('div');
@@ -20,11 +19,10 @@ function wall() {
 
     containerWall.classList.add('containerWall');
     divContainerProfile.classList.add('divContainerProfile');
-    titleWelcome.classList.add('titleWelcome');
     img_logo.classList.add('img_logo');
+    titleWelcome.classList.add('titleWelcome');
     container_Options.classList.add('container_Options');
     a_Home.classList.add('a_Home');
-    a_Notifications.classList.add('a_Notifications');
     a_Profile.classList.add('a_Profile');
     containerWriteWall.classList.add('containerWriteWall');
     divContainerButton.classList.add('divContainerButton');
@@ -36,10 +34,9 @@ function wall() {
     iconPoll.classList.add('iconPoll');
     articlePost.classList.add('articlePost');
 
-    img_logo.setAttribute('src', '../Assets/logo-haku-white.png');
+    img_logo.setAttribute('src', '../Assets/logo-haku-black.png');
     img_logo.setAttribute('alt', 'Haku Social Network Logo');
     a_Home.setAttribute('href', '/home');
-    a_Notifications.setAttribute('href', '#');
     a_Profile.setAttribute('href', '/profile');
     imgProfile2.setAttribute('src', '../Assets/561.ico');
     imgProfile2.setAttribute('alt', 'User profile photo');
@@ -51,9 +48,8 @@ function wall() {
     iconPoll.setAttribute('src', '../assets/icon-poll.png');
     iconPoll.setAttribute('alt', 'Purvey icon');
 
-    titleWelcome.textContent = 'HELLO, WELCOME!';
+
     a_Home.innerHTML = `<img src="../Assets/home.png" alt="House icon">Home</a>`
-    a_Notifications.innerHTML = `<img src="../Assets/notifications.png" alt="Bell icon">Notifications</a>`
     a_Profile.innerHTML = `<img src="../Assets/user.png" alt="User icon">Profile</a>`
     buttonWrite.textContent = 'Write something...';
 
@@ -123,7 +119,7 @@ function wall() {
             html +=
             `<div class="postContainer">
                     <div class="divContainerUser" id="divContenedorxD">
-                            <img class="imgProfile3" src="${post.imageUser}" alt="Scissors and comb profile icon">
+                            <img class="imgProfile3" src="${post.imageUser}" alt="">
                             <h2 class="nameUser">${post.nameUser}</h2>
                             <img class="postIconOptions"  src="../assets/icon-three-dots.png" alt="Ellipsis icon">
                             <div class="postMenuOptions">
@@ -143,12 +139,10 @@ function wall() {
                     <div class="ContainerDetailsPadre">
                         <div class="containerDetails">
                             <span class="number" data-id="${element.id}">${post.likeCounter}</span>
-                            <img class="iconHeart" src="../assets/icon-heart-white.png" alt="Heart icon">
+                            <img class="iconHeart" src="../assets/icon-heart-red.png" alt="Heart icon">
                             <span class="iLike" data-id="${element.id}">I like</span>
                             <img class="iconComment" src="../assets/icon-comment.png" alt="Feedback icon">
                             <p class="comment">Comment</p>
-                            <img class="iconShare" src="../assets/icon-share.png" alt="Share icon">
-                            <p class="share">Share</p>
                         </div>
                     </div>
             </div>`
@@ -245,8 +239,8 @@ function wall() {
     });
 
     containerWall.append(divContainerProfile,container_Options, containerWriteWall,modalContainerCreatePost, articlePost);
-    divContainerProfile.append(titleWelcome, img_logo);
-    container_Options.append(a_Home, a_Notifications, a_Profile);
+    divContainerProfile.append(img_logo, titleWelcome);
+    container_Options.append(a_Home, a_Profile);
     containerWriteWall.append(divContainerButton, divContainerOptions);
     divContainerButton.append(imgProfile2, buttonWrite);
     divContainerOptions.append(iconVideo, iconPicture, iconPoll);

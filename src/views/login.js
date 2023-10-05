@@ -1,8 +1,8 @@
-import { LoginWithGoogle } from "../firebase/firebase.js";
+import { LoginWithGoogle, loginEmailPassword, onGetUserData, deleteUser } from "../firebase/firebase.js";
 function login(navigator) {
     const containerLogin = document.createElement('section');
     const divBackground = document.createElement('div');
-    const blackTransparency = document.createElement('img');
+    const blackTransparency = document.createElement('div');
     const sectionForm = document.createElement('section');
     const imgLogo = document.createElement('img');
     const form = document.createElement('form');
@@ -24,9 +24,7 @@ function login(navigator) {
     const othersAccess = document.createElement('p');
     const line2 = document.createElement('div');
     const sectionIconApp = document.createElement('section');
-    const imgIconFacebook = document.createElement('img');
     const imgIconGoogle = document.createElement('img');
-    const imgIconTwitter = document.createElement('img');
 
     containerLogin.classList.add('containerLogin');
     divBackground.classList.add('divBackground');
@@ -52,9 +50,7 @@ function login(navigator) {
     othersAccess.classList.add('othersAccess');
     line2.classList.add('line2');
     sectionIconApp.classList.add('sectionIconApp');
-    imgIconFacebook.classList.add('imgIconFacebook');
     imgIconGoogle.classList.add('imgIconGoogle');
-    imgIconTwitter.classList.add('imgIconTwitter')
 
     imgLogo.setAttribute('src', '../assets/logo-haku-white.png');
     imgLogo.setAttribute('alt', 'Haku Social Network Logo');
@@ -75,21 +71,38 @@ function login(navigator) {
     inputPassword.setAttribute('required', '');
     msgEmailPassword.setAttribute('id', 'msg_Email');
     buttonSingIn.setAttribute('type', 'submit');
-    imgIconFacebook.setAttribute('src', '../assets/icon-facebook.png');
-    imgIconFacebook.setAttribute('alt', 'Facebok logo')
     imgIconGoogle.setAttribute('src', '../assets/icon-google.png');
     imgIconGoogle.setAttribute('alt', 'Google logo');
-    imgIconTwitter.setAttribute('src', '../assets/icon-twitter.png');
-    imgIconTwitter.setAttribute('alt', 'Twitter logo');
 
     buttonSingIn.textContent = 'Sign In';
     createAccount.innerHTML = `<a href='register' id='linkCreateAccount'>Create Account</a>`
     forgotPassword.innerHTML = `<a href='password' id='linkForgotPassword'>Forgot your password?</a>`
     othersAccess.textContent = 'Or connect with';
 
+    //trayendo datos del Usuario anterior
+    let userIdLogin=""
+    let user=""
+    onGetUserData((responseUserData)=>{
+        responseUserData.forEach(element=>{
+            user=element
+            userIdLogin=element.id
+        })
+    })
+
+
+    buttonSingIn.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginEmailPassword(navigator);
+        if (user){
+            deleteUser(userIdLogin)
+        }
+    })
+
+
     imgIconGoogle.addEventListener('click', () => {
         LoginWithGoogle(navigator);
     });
+
 
     containerLogin.append(divBackground, blackTransparency, sectionForm);
     sectionForm.append(imgLogo, form, sectionLinks, sectionConnectWith, sectionIconApp )
@@ -100,7 +113,7 @@ function login(navigator) {
     spanIconPassword.append(inputIconPassword);
     sectionLinks.append(createAccount, forgotPassword);
     sectionConnectWith.append(line1, othersAccess, line2);
-    sectionIconApp.append(imgIconFacebook, imgIconGoogle, imgIconTwitter);
+    sectionIconApp.append(imgIconGoogle);
 
     return containerLogin;
 };
