@@ -1,4 +1,5 @@
 import { restorePassword } from "../firebase/firebase.js";
+import "../styles/password.css";
 function password(navigateTo) {
     const containerForgotPassword = document.createElement('section');
     const divContainerLogo = document.createElement('div');

@@ -1,4 +1,5 @@
 import { LoginWithGoogle, loginEmailPassword, onGetUserData, deleteUser } from "../firebase/firebase.js";
+import "../styles/login.css";
 function login(navigator) {
     const containerLogin = document.createElement('section');
     const divBackground = document.createElement('div');

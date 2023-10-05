@@ -1,4 +1,5 @@
 import { savePosts,onGetPosts,onGetUserData,deletePost,getPost,updatePost} from "../firebase/firebase";
+import "../styles/wall.css";
 function wall() {
     const containerWall = document.createElement('section');
     const divContainerProfile = document.createElement('div');
