@@ -1,6 +1,6 @@
 import { savePosts,onGetPosts,onGetUserData,deletePost,getPost,updatePost} from "../firebase/firebase";
-//import "../styles/wall.css";
-function wall() {
+import "../styles/wall.css";
+function wall(navigator) {
     const containerWall = document.createElement('section');
     const divContainerProfile = document.createElement('div');
     const img_logo = document.createElement('img');
@@ -37,8 +37,6 @@ function wall() {
 
     img_logo.setAttribute('src', '/assets/logo-haku-black.png');
     img_logo.setAttribute('alt', 'Haku Social Network Logo');
-    a_Home.setAttribute('href', '/home');
-    a_Profile.setAttribute('href', '/profile');
     imgProfile2.setAttribute('alt', 'User profile photo');
     buttonWrite.setAttribute('type', 'button');
     iconVideo.setAttribute('src', '/assets/icon-video.png');
@@ -82,6 +80,15 @@ function wall() {
     let userName = "";
     let userPhoto = "";
     let likeContador = 0;
+    
+    a_Profile.addEventListener('click',()=>{
+
+        navigator('/profile')
+    })
+
+    a_Home.addEventListener('click',()=>{
+        navigator('/')
+    })
 
     //Trayendo datos en tiempo real del usuario de la coleccion Google (nombre y foto)
     onGetUserData((responseUserData)=>{

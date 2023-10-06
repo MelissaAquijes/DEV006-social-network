@@ -1,5 +1,6 @@
 import { LoginWithGoogle, loginEmailPassword, onGetUserData, deleteUser } from "../firebase/firebase.js";
-//import "../styles/login.css";
+import "../styles/login.css";
+
 function login(navigator) {
     const containerLogin = document.createElement('section');
     const divBackground = document.createElement('div');
@@ -53,16 +54,16 @@ function login(navigator) {
     sectionIconApp.classList.add('sectionIconApp');
     imgIconGoogle.classList.add('imgIconGoogle');
 
-    imgLogo.setAttribute('src', '/assets/logo-haku-white.png');
-    imgLogo.setAttribute('alt', 'Haku Social Network Logo');
+    imgLogo.setAttribute('src','/assets/logo-haku-white.png');
+    imgLogo.setAttribute('alt','Haku Social Network Logo');
     form.setAttribute('id', 'signIn-form');
-    inputIconUser.setAttribute('src', '/assets/icon-user.png')
-    inputIconUser.setAttribute('alt', 'User icon')
+    inputIconUser.setAttribute('src','/assets/icon-user.png')
+    inputIconUser.setAttribute('alt','User icon')
     inputEmail.setAttribute('id', 'inputEmail');
     inputEmail.setAttribute('type', 'email');
     inputEmail.setAttribute('placeholder', 'EMAIL');
     inputEmail.setAttribute('required', '');
-    inputIconPassword.setAttribute('src', '/assets/icon-password.png');
+    inputIconPassword.setAttribute('src','/assets/icon-password.png');
     inputIconPassword.setAttribute('alt', 'Secret key icon');
     inputPassword.setAttribute('id', 'inputPassword');
     inputPassword.setAttribute('type', 'password');
@@ -76,8 +77,8 @@ function login(navigator) {
     imgIconGoogle.setAttribute('alt', 'Google logo');
 
     buttonSingIn.textContent = 'Sign In';
-    createAccount.innerHTML = `<a href='register' id='linkCreateAccount'>Create Account</a>`
-    forgotPassword.innerHTML = `<a href='password' id='linkForgotPassword'>Forgot your password?</a>`
+    createAccount.innerHTML = `<a id='linkCreateAccount'>Create Account</a>`
+    forgotPassword.innerHTML = `<a id='linkForgotPassword'>Forgot your password?</a>`
     othersAccess.textContent = 'Or connect with';
 
     //trayendo datos del Usuario anterior
@@ -88,6 +89,14 @@ function login(navigator) {
             user=element
             userIdLogin=element.id
         })
+    })
+
+    createAccount.addEventListener('click',()=>{
+        navigator('/register')
+    })
+
+    forgotPassword.addEventListener('click',()=>{
+        navigator('/password')
     })
 
 

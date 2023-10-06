@@ -1,5 +1,5 @@
 import { registerUser} from "../firebase/firebase.js";
-//import "../styles/register.css";
+import "../styles/register.css";
 function register(navegador) {
     const containerRegister = document.createElement('section');
     const containerLogo = document.createElement('div');

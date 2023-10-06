@@ -1,12 +1,11 @@
 import { logout, onGetUserData } from "../firebase/firebase.js";
-//import "../styles/profile.css";
+import "../styles/profile.css";
 function profile(navigator) {
     const containerProfile = document.createElement('div');
     const container_Welcome = document.createElement('section');
     const img_Logo = document.createElement('img');
     const container_Options = document.createElement('section');
     const a_Home = document.createElement('a');
-    const a_Profile = document.createElement('a');
     const divContainerLogout = document.createElement('div');
     const p_logout = document.createElement('p');
     const imgLogout = document.createElement('img');
@@ -23,7 +22,6 @@ function profile(navigator) {
     img_Logo.classList.add('img_Logo');
     container_Options.classList.add('container_Options');
     a_Home.classList.add('a_Home');
-    a_Profile.classList.add('a_Profile');
     divContainerLogout.classList.add('divContainerLogout');
     p_logout.classList.add('p_logout');
     imgLogout.classList.add('imgLogout');
@@ -37,15 +35,12 @@ function profile(navigator) {
 
     img_Logo.setAttribute('src', '/assets/logo-haku-black.png');
     img_Logo.setAttribute('alt', 'Haku Social Network Logo');
-    a_Home.setAttribute('href', '/wall');
-    a_Profile.setAttribute('href', '/profile');
     imgLogout.setAttribute('src', '/assets/logout2.png');
     imgLogout.setAttribute('alt', 'Logout Icon');
     imgProfile.setAttribute('src', '/assets/user-profile.png');
     imgProfile.setAttribute('alt', 'Haku Social Network Logo');
 
     a_Home.innerHTML = `<img src="/assets/home.png" alt="House icon">Home</a>`
-    a_Profile.innerHTML = `<img src="/assets/user.png" alt="User icon">Profile</a>`
     p_logout.textContent = 'Log out';
     h2_profile.textContent = 'PROFILE';
     p_name.textContent = 'Name';
@@ -53,13 +48,18 @@ function profile(navigator) {
     span_name.innerHTML = 'Lorem ipsum';
     span_aboutMe.innerHTML = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident expedita nesciunt dolorum corrupti sit quo animi a repellat ad.';
 
+
+    a_Home.addEventListener('click',()=>{
+        navigator('/wall')
+    })
+
     imgLogout.addEventListener('click', async () => {
         logout(navigator)
     });
 
     containerProfile.append(container_Welcome, container_Options, divContainerLogout, h2_profile, containerUserData);
     container_Welcome.append(img_Logo);
-    container_Options.append(a_Home, a_Profile);
+    container_Options.append(a_Home);
     divContainerLogout.append(p_logout, imgLogout);
     containerUserData.append(imgProfile, p_name, span_name, p_aboutMe, span_aboutMe);
 
