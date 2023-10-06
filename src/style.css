@@ -1,0 +1,979 @@
+:root {
+    --pink-color: #CE0056;
+    --lightPink-color: #FF4888;
+    --black-color: #111111;
+    --white-color: #FFFFFF;
+    --lightGrey-color: #7F8487;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/*------------------ERROR--------------------*/
+
+.sectionError {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgError {
+    border-radius: 50%;
+    width: 80%;
+    max-width: 550px;
+    box-shadow: 6px 20px 10px black;
+}
+
+/*--------------------LOGIN-------------------*/
+
+
+.containerLogin {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divBackground {
+    width: 100%;
+    height: 100vh;
+    min-width: 320px;
+    background-image: url(../assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.blackTransparency {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    background: rgba(0, 0, 0, 0.17);
+    border: none;
+}
+
+.sectionForm {
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    max-width: 550px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgLogo {
+    width: 250px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divInputUser,
+.divInputPassword {
+    width: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.spanIconUser,
+.spanIconPassword {
+    width: 37px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0px 0px 5px;
+    border-width: 2px 0px 2px 2px;
+    border-style: solid;
+    border-color: var(--white-color);
+}
+
+.inputIconUser,
+.inputIconPassword {
+    width: 25px;
+    height: 25px;
+}
+
+.inputEmail,
+.inputPassword {
+    width: 100%;
+    height: 40px;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 40px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    outline: none;
+    padding-left: 6px;
+}
+
+.inputEmail::placeholder,
+.inputPassword::placeholder {
+    color: var(--lightGrey-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.0rem;
+    font-weight: 600;
+}
+
+.msgEmailPassword {
+    font-size: 1.2rem;
+    color: red;
+    padding: 0px 15px;
+    text-align: center;
+}
+
+.buttonSignIn {
+    width: 100%;
+    height: 40px;
+    margin-top: 62px;
+    background-color: var(--pink-color);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+.buttonSignIn:hover {
+    background-color: var(--lightPink-color);
+}
+
+.sectionLinks {
+    display: inline-flex;
+    margin-top: 8px;
+}
+
+.createAccount a,
+.forgotPassword a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.createAccount {
+    margin-right: 30px;
+}
+
+.forgotPassword a {
+    font-style: italic;
+}
+
+.createAccount a:hover,
+.forgotPassword a:hover {
+    color: var(--pink-color);
+}
+
+.sectionConnectWith {
+    display: flex;
+    align-items: center;
+    margin: 43px 0px 15px;
+}
+
+.line1,
+.line2 {
+    width: 80px;
+    border-top: 1px solid var(--white-color)
+}
+
+.othersAccess {
+    padding: 0px 15px;
+    color: var(--white-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.sectionIconApp {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imgIconFacebook,
+.imgIconGoogle {
+    width: 40px;
+    cursor: pointer;
+}
+
+.imgIconFacebook:hover,
+.imgIconGoogle:hover {
+    transform: scale(1.1);
+}
+
+/*--------------------PASSWORD-------------------*/
+.containerForgotPassword {
+    width: 100%;
+    height: 100vh;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/1.png);
+}
+
+.divContainerLogo {
+    width: 90%;
+    height: 95px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0px 0px 0px 15px;
+}
+
+.img_Logo {
+    width: 60%;
+    min-width: 100px;
+    max-width: 200px;
+    text-align: start;
+}
+
+.img_back {
+    width: 30px;
+}
+
+.titleRecoverPassword {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--black-color);
+}
+
+.informationParagraph {
+    width: 80%;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 40px 0px 0px;
+}
+
+.formRecoverPassword {
+    width: 90%;
+    height: 464px;
+    min-width: 280px;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.divInput_Email {
+    width: 90%;
+    display: flex;
+    align-items: end;
+}
+
+.spanIcon_Email {
+    width: 37px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0px 0px 5px;
+    border-width: 2px 0px 2px 2px;
+    border-style: solid;
+    border-color: var(--white-color);
+}
+
+.inputIcon_Email {
+    width: 25px;
+    height: 25px;
+}
+
+.input_email {
+    width: 100%;
+    height: 40px;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 70px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    outline: none;
+    padding-left: 6px;
+}
+
+.input_email::placeholder {
+    color: var(--lightGrey-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.0rem;
+    font-weight: 600;
+}
+
+.message_email {
+    font-size: 1.2rem;
+    color: red;
+    padding: 0px 15px;
+    text-align: center;
+}
+
+.buttonRecoverPassword {
+    width: 70%;
+    height: 40px;
+    margin: 40px 0px 0px;
+    background-color: var(--pink-color);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+.buttonRecoverPassword:hover {
+    background-color: var(--lightPink-color);
+}
+
+
+/*--------------------PROFILE-------------------*/
+
+.containerProfile {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../assets/background2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container_logo {
+    width: 100%;
+    height: 95px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 0px 15px;
+    background: var(--white-color);
+}
+
+.title_Welcome {
+    font-size: 1.7rem;
+    color: var(--lightPink-color);
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+.img_Logo {
+    width: 60%;
+    min-width: 100px;
+    max-width: 200px;
+    text-align: start;
+}
+
+.divContainerLogout {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    margin-top: 15px;
+}
+
+.p_logout {
+    color: var(--black-color);
+    font-size: 1.3rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.imgLogout {
+    width: 30px;
+}
+
+.h2_profile {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--black-color);
+    margin: 10px 0px;
+}
+
+.containerUserData {
+    width: 90%;
+    height: 350px;
+    min-width: 280px;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.imgProfile {
+    width: 120px;
+    border-radius: 40px;
+    justify-content: center;
+}
+
+.p_name,
+.p_aboutMe {
+    font-size: 1.7rem;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    color: var(--lightPink-color);
+    margin-top: 25px;
+}
+
+.span_name,
+.span_aboutMe {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+    color: var(--black-color);
+}
+
+.span_aboutMe {
+    padding: 0px 20px;
+}
+
+
+@media only screen and (min-width: 700px) {
+    .Title_welcome {
+        letter-spacing: 3px;
+        font-size: 2.5rem;
+    }
+}
+
+/*--------------------REGISTER-------------------*/
+
+.containerRegister {
+    width: 100%;
+    height: 100vh;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/1.png);
+}
+
+.containerLogo {
+    width: 90%;
+    height: 95px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0px 0px 0px 15px;
+}
+
+.logoHaku {
+    width: 60%;
+    min-width: 100px;
+    max-width: 200px;
+    text-align: start;
+}
+
+.imgBack {
+    width: 30px;
+}
+
+.titleCreateAccount {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--black-color);
+    margin: 10px 0px 0px;
+}
+
+.formRegister {
+    width: 90%;
+    height: auto;
+    min-width: 280px;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.divInpuName,
+.divInputEmail,
+.divInput_Password,
+.divInputNewPassword {
+    width: 90%;
+    display: flex;
+    align-items: end;
+}
+
+.spanIconName,
+.spanIconEmail,
+.spanIcon_Password,
+.spanIconNewPassword {
+    width: 37px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 0px 0px 5px;
+    border-width: 2px 0px 2px 2px;
+    border-style: solid;
+    border-color: var(--white-color);
+}
+
+.inputIconName,
+.inputIconEmail,
+.inputIcon_Password,
+.inputIconNewPassword {
+    width: 25px;
+    height: 25px;
+}
+
+.inputName,
+.input_Email,
+.input_Password,
+.inputNewPassword {
+    width: 100%;
+    height: 40px;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 40px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    outline: none;
+    padding-left: 6px;
+}
+
+.inputName::placeholder,
+.input_Email::placeholder,
+.input_Password::placeholder,
+.inputNewPassword::placeholder {
+    color: var(--lightGrey-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.0rem;
+    font-weight: 600;
+}
+
+.buttonSignUp {
+    width: 70%;
+    height: 40px;
+    margin: 30px 0px;
+    background-color: var(--pink-color);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+.buttonSignUp:hover {
+    background-color: var(--lightPink-color);
+}
+
+
+
+/*--------------------WALL-------------------*/
+.containerWall {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(253, 234, 194);
+    background: linear-gradient(86deg, rgba(253, 234, 194, 1) 0%, rgba(253, 193, 219, 1) 100%);
+}
+
+.divContainerProfile {
+    width: 100%;
+    height: 95px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 0px 15px;
+    background: var(--white-color);
+}
+
+.img_logo {
+    width: 60%;
+    min-width: 100px;
+    max-width: 200px;
+    text-align: start;
+}
+
+.titleWelcome {
+    font-size: 1.7rem;
+    color: var(--lightPink-color);
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container_Options {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.a_Home,
+.a_Notifications,
+.a_Profile {
+    width: 150px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: #333333;
+}
+
+.a_Home img,
+.a_Notifications img,
+.a_Profile img {
+    width: 18px;
+    margin-right: 4px;
+}
+
+.a_Home:hover,
+.a_Notifications:hover,
+.a_Profile:hover {
+    text-decoration: underline;
+}
+
+.containerWriteWall {
+    width: 90%;
+    height: 15vh;
+    min-width: 280px;
+    max-width: 650px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff48884a;
+}
+
+.divContainerButton {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imgProfile2 {
+    width: 38px;
+    border-radius: 25px;
+}
+
+.buttonWrite {
+    width: 80%;
+    height: 28px;
+    min-width: 230px;
+    max-width: 700px;
+    background: var(--white-color);
+    border-radius: 20px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    color: var(--lightGrey-color);
+    cursor: pointer;
+}
+
+.divContainerOptions {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--white-color);
+}
+
+.iconVideo {
+    width: 25px;
+}
+
+.iconPicture {
+    width: 25px;
+    margin: 0px 15% 0px;
+}
+
+.iconPoll {
+    width: 25px;
+}
+
+.articlePost {
+    width: 90%;
+    min-width: 280px;
+    max-width: 980px;
+    height: auto;
+    margin: 35px 0px 0px;
+    border-radius: 10px;
+}
+
+/* Creación de post */
+.postContainer {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 10px 10px 18px;
+    border-radius: 10px;
+}
+
+.divContainerUser {
+    width: 100%;
+    height: 60px;
+    padding: 0px 20px 0px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    position: relative;
+}
+
+.imgProfile3 {
+    width: 40px;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+.nameUser {
+    font-size: 1.6rem;
+    font-family: 'Nunito', sans-serif;
+    color: var(--lightPink-color);
+}
+
+.postIconOptions {
+    width: 25px;
+    cursor: pointer;
+}
+
+.postMenuOptions {
+    background-color: #242526;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    position: absolute;
+    right: 48px;
+    bottom: -40px;
+    visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 1px #18191a;
+    padding: 5px 5px;
+}
+
+.postMenuOptions div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.postMenuOptions div:hover {
+    background-color: var(--lightPink-color);
+    border-radius: 5px;
+}
+
+.postMenuOptions img {
+    height: 15px;
+}
+
+.postMenuOptions a {
+    color: var(--white-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+}
+
+.buttonDelete {
+    z-index: 1;
+}
+
+.postUser {
+    font-size: 1.1rem;
+    text-align: start;
+    padding: 20px;
+    color: #42273B;
+}
+
+.ContainerDetailsPadre {
+    width: 100%;
+    height: 50px;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.containerDetails {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--lightPink-color);
+}
+
+.number {
+    font-size: 1.2rem;
+    color: var(--black-color);
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    margin-right: 1.3px;
+}
+
+.iconHeart {
+    width: 20px;
+}
+
+.iLike {
+    font-size: 1.1rem;
+    color: var(--black-color);
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.iLike:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+}
+
+.iconComment {
+    width: 20px;
+    margin-right: 3px;
+    margin-left: 28%;
+}
+
+.comment {
+    font-size: 1.1rem;
+    color: var(--black-color);
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+/* Pop up */
+.modalContainerCreatePost {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.active {
+    visibility: visible;
+}
+
+.popUp {
+    width: 85%;
+    height: auto;
+    min-width: 260px;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--white-color);
+    position: relative;
+}
+
+.titleCreatePost {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--black-color);
+}
+
+.modalClose {
+    width: 8%;
+    min-width: 25px;
+    max-width: 40px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.formCreatePost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputCreatePost {
+    width: 100%;
+    height: 25vh;
+    min-width: 200px;
+    max-width: 500px;
+    text-indent: 5px;
+    resize: none;
+    padding: 10px;
+}
+
+.btnCreatePost {
+    width: 245px;
+    height: 35px;
+    margin-top: 20px;
+    background-color: var(--pink-color);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white-color);
+    cursor: pointer
+}
+
+.btnCreatePost:hover {
+    background-color: var(--lightPink-color);
+}
+
+
+@media only screen and (min-width: 700px) {
+    .titleWelcome {
+        letter-spacing: 3px;
+        font-size: 2.0rem;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .nameUser {
+        font-size: 1.8rem;
+    }
+}
+

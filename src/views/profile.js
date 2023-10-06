@@ -1,5 +1,5 @@
 import { logout, onGetUserData } from "../firebase/firebase.js";
-import "../styles/profile.css";
+//import "../styles/profile.css";
 function profile(navigator) {
     const containerProfile = document.createElement('div');
     const container_Welcome = document.createElement('section');

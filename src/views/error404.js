@@ -1,4 +1,4 @@
-import "../styles/error404.css";
+
 function error404() {
     const sectionError = document.createElement('section');
     const imgError = document.createElement('img');
