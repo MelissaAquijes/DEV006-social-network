@@ -50,7 +50,7 @@ function wall() {
 
 
     a_Home.innerHTML = `<img src="../assets/home.png" alt="House icon">Home</a>`
-    a_Profile.innerHTML = `<img src="../Assets/user.png" alt="User icon">Profile</a>`
+    a_Profile.innerHTML = `<img src="../assets/user.png" alt="User icon">Profile</a>`
     buttonWrite.textContent = 'Write something...';
 
     //Pop up - Crear post
@@ -70,7 +70,7 @@ function wall() {
     inputCreatePost.classList.add('inputCreatePost');
     btnCreatePost.classList.add('btnCreatePost');
 
-    modalClose.setAttribute('src', '../Assets/close.png');
+    modalClose.setAttribute('src', '../assets/close.png');
     modalClose.setAttribute('alt', 'Close icon');
     formCreatePost.setAttribute('id', 'idFormPost');
     inputCreatePost.setAttribute('placeholder', 'Write here...');
@@ -177,7 +177,7 @@ function wall() {
                 iconsHeart.forEach((icon,indexIcon) =>{
                     if(index === indexIcon){
                         icon.removeAttribute("src");
-                        icon.setAttribute('src', '../Assets/icon-heart-red.png');
+                        icon.setAttribute('src', '../assets/icon-heart-red.png');
                     }
                 });
             });
