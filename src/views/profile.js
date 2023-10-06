@@ -35,17 +35,17 @@ function profile(navigator) {
     p_aboutMe.classList.add('p_aboutMe');
     span_aboutMe.classList.add('span_aboutMe');
 
-    img_Logo.setAttribute('src', '../assets/logo-haku-black.png');
+    img_Logo.setAttribute('src', '/assets/logo-haku-black.png');
     img_Logo.setAttribute('alt', 'Haku Social Network Logo');
     a_Home.setAttribute('href', '/wall');
     a_Profile.setAttribute('href', '/profile');
-    imgLogout.setAttribute('src', '../assets/logout2.png');
+    imgLogout.setAttribute('src', '/assets/logout2.png');
     imgLogout.setAttribute('alt', 'Logout Icon');
-    imgProfile.setAttribute('src', '../assets/user-profile.png');
+    imgProfile.setAttribute('src', '/assets/user-profile.png');
     imgProfile.setAttribute('alt', 'Haku Social Network Logo');
 
-    a_Home.innerHTML = `<img src="../assets/home.png" alt="House icon">Home</a>`
-    a_Profile.innerHTML = `<img src="../assets/user.png" alt="User icon">Profile</a>`
+    a_Home.innerHTML = `<img src="/assets/home.png" alt="House icon">Home</a>`
+    a_Profile.innerHTML = `<img src="/assets/user.png" alt="User icon">Profile</a>`
     p_logout.textContent = 'Log out';
     h2_profile.textContent = 'PROFILE';
     p_name.textContent = 'Name';

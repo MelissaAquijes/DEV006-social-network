@@ -35,22 +35,22 @@ function wall() {
     iconPoll.classList.add('iconPoll');
     articlePost.classList.add('articlePost');
 
-    img_logo.setAttribute('src', '../assets/logo-haku-black.png');
+    img_logo.setAttribute('src', '/assets/logo-haku-black.png');
     img_logo.setAttribute('alt', 'Haku Social Network Logo');
     a_Home.setAttribute('href', '/home');
     a_Profile.setAttribute('href', '/profile');
     imgProfile2.setAttribute('alt', 'User profile photo');
     buttonWrite.setAttribute('type', 'button');
-    iconVideo.setAttribute('src', '../assets/icon-video.png');
+    iconVideo.setAttribute('src', '/assets/icon-video.png');
     iconVideo.setAttribute('alt', 'Video icon');
-    iconPicture.setAttribute('src', '../assets/icon-picture.png');
+    iconPicture.setAttribute('src', '/assets/icon-picture.png');
     iconPicture.setAttribute('alt', 'Picture icon');
-    iconPoll.setAttribute('src', '../assets/icon-poll.png');
+    iconPoll.setAttribute('src', '/assets/icon-poll.png');
     iconPoll.setAttribute('alt', 'Purvey icon');
 
 
-    a_Home.innerHTML = `<img src="../assets/home.png" alt="House icon">Home</a>`
-    a_Profile.innerHTML = `<img src="../assets/user.png" alt="User icon">Profile</a>`
+    a_Home.innerHTML = `<img src="/assets/home.png" alt="House icon">Home</a>`
+    a_Profile.innerHTML = `<img src="/assets/user.png" alt="User icon">Profile</a>`
     buttonWrite.textContent = 'Write something...';
 
     //Pop up - Crear post
@@ -70,7 +70,7 @@ function wall() {
     inputCreatePost.classList.add('inputCreatePost');
     btnCreatePost.classList.add('btnCreatePost');
 
-    modalClose.setAttribute('src', '../assets/close.png');
+    modalClose.setAttribute('src', '/assets/close.png');
     modalClose.setAttribute('alt', 'Close icon');
     formCreatePost.setAttribute('id', 'idFormPost');
     inputCreatePost.setAttribute('placeholder', 'Write here...');
@@ -121,15 +121,15 @@ function wall() {
                     <div class="divContainerUser" id="divContenedorxD">
                             <img class="imgProfile3" src="${post.imageUser}" alt="">
                             <h2 class="nameUser">${post.nameUser}</h2>
-                            <img class="postIconOptions"  src="../assets/icon-three-dots.png" alt="Ellipsis icon">
+                            <img class="postIconOptions"  src="/assets/icon-three-dots.png" alt="Ellipsis icon">
                             <div class="postMenuOptions">
                                 <div class="buttonEdit" data-id="${element.id}">
                                     <a data-id="${element.id}">Edit</a>
-                                    <img src="../assets/edit.png" data-id="${element.id}">
+                                    <img src="/assets/edit.png" data-id="${element.id}">
                                 </div>
                                 <div class="buttonDelete" data-id="${element.id}">
                                     <a data-id="${element.id}">Delete</a>
-                                    <img src="../assets/delete.ico" data-id="${element.id}">
+                                    <img src="/assets/delete.ico" data-id="${element.id}">
                                 </div>
                             </div>
                     </div>
@@ -139,9 +139,9 @@ function wall() {
                     <div class="ContainerDetailsPadre">
                         <div class="containerDetails">
                             <span class="number" data-id="${element.id}">${post.likeCounter}</span>
-                            <img class="iconHeart" src="../assets/icon-heart-red.png" alt="Heart icon">
+                            <img class="iconHeart" src="/assets/icon-heart-red.png" alt="Heart icon">
                             <span class="iLike" data-id="${element.id}">I like</span>
-                            <img class="iconComment" src="../assets/icon-comment.png" alt="Feedback icon">
+                            <img class="iconComment" src="/assets/icon-comment.png" alt="Feedback icon">
                             <p class="comment">Comment</p>
                         </div>
                     </div>
@@ -177,7 +177,7 @@ function wall() {
                 iconsHeart.forEach((icon,indexIcon) =>{
                     if(index === indexIcon){
                         icon.removeAttribute("src");
-                        icon.setAttribute('src', '../assets/icon-heart-red.png');
+                        icon.setAttribute('src', '/assets/icon-heart-red.png');
                     }
                 });
             });

@@ -53,16 +53,16 @@ function login(navigator) {
     sectionIconApp.classList.add('sectionIconApp');
     imgIconGoogle.classList.add('imgIconGoogle');
 
-    imgLogo.setAttribute('src', '../assets/logo-haku-white.png');
+    imgLogo.setAttribute('src', '/assets/logo-haku-white.png');
     imgLogo.setAttribute('alt', 'Haku Social Network Logo');
     form.setAttribute('id', 'signIn-form');
-    inputIconUser.setAttribute('src', '../assets/icon-user.png')
+    inputIconUser.setAttribute('src', '/assets/icon-user.png')
     inputIconUser.setAttribute('alt', 'User icon')
     inputEmail.setAttribute('id', 'inputEmail');
     inputEmail.setAttribute('type', 'email');
     inputEmail.setAttribute('placeholder', 'EMAIL');
     inputEmail.setAttribute('required', '');
-    inputIconPassword.setAttribute('src', '../assets/icon-password.png');
+    inputIconPassword.setAttribute('src', '/assets/icon-password.png');
     inputIconPassword.setAttribute('alt', 'Secret key icon');
     inputPassword.setAttribute('id', 'inputPassword');
     inputPassword.setAttribute('type', 'password');
@@ -72,7 +72,7 @@ function login(navigator) {
     inputPassword.setAttribute('required', '');
     msgEmailPassword.setAttribute('id', 'msg_Email');
     buttonSingIn.setAttribute('type', 'submit');
-    imgIconGoogle.setAttribute('src', '../assets/icon-google.png');
+    imgIconGoogle.setAttribute('src', '/assets/icon-google.png');
     imgIconGoogle.setAttribute('alt', 'Google logo');
 
     buttonSingIn.textContent = 'Sign In';
