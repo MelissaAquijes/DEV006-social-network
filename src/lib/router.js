@@ -1,4 +1,4 @@
-import { routes } from "./pages";
+import { routes } from "./pages.js";
 
 const root = document.getElementById('root');
 

@@ -1,5 +1,10 @@
-import { logout, onGetUserData } from "../firebase/firebase.js";
+import { logout } from "../firebase/firebase.js";
 import "../styles/profile.css";
+import  logoB from '../assets/logo-haku-black.png'
+import  iconLogout from '../assets/logout2.png'
+import  iconUser from '../assets/user-profile.png'
+import  iconHome from '../assets/home.png'
+
 function profile(navigator) {
     const containerProfile = document.createElement('div');
     const container_Welcome = document.createElement('section');
@@ -33,14 +38,14 @@ function profile(navigator) {
     p_aboutMe.classList.add('p_aboutMe');
     span_aboutMe.classList.add('span_aboutMe');
 
-    img_Logo.setAttribute('src', '/assets/logo-haku-black.png');
+    img_Logo.setAttribute('src', logoB);
     img_Logo.setAttribute('alt', 'Haku Social Network Logo');
-    imgLogout.setAttribute('src', '/assets/logout2.png');
+    imgLogout.setAttribute('src', iconLogout);
     imgLogout.setAttribute('alt', 'Logout Icon');
-    imgProfile.setAttribute('src', '/assets/user-profile.png');
+    imgProfile.setAttribute('src', iconUser);
     imgProfile.setAttribute('alt', 'Haku Social Network Logo');
 
-    a_Home.innerHTML = `<img src="/assets/home.png" alt="House icon">Home</a>`
+    a_Home.innerHTML = `<img src= ${iconHome} alt="House icon">Home</a>`
     p_logout.textContent = 'Log out';
     h2_profile.textContent = 'PROFILE';
     p_name.textContent = 'Name';
@@ -57,9 +62,9 @@ function profile(navigator) {
         logout(navigator)
     });
 
-    containerProfile.append(container_Welcome, container_Options, divContainerLogout, h2_profile, containerUserData);
+    containerProfile.append(container_Welcome, container_Options, h2_profile, containerUserData);
     container_Welcome.append(img_Logo);
-    container_Options.append(a_Home);
+    container_Options.append(a_Home, divContainerLogout);
     divContainerLogout.append(p_logout, imgLogout);
     containerUserData.append(imgProfile, p_name, span_name, p_aboutMe, span_aboutMe);
 

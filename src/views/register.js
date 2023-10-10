@@ -1,5 +1,11 @@
 import { registerUser} from "../firebase/firebase.js";
 import "../styles/register.css";
+import  logoWR from '../assets/logo-haku-white.png'
+import  iconBck from '../assets/back.png'
+import  userGrey from '../assets/icon-user-grey.png'
+import  emailR from '../assets/email.png'
+import  passGrey from '../assets/icon-password-grey.png'
+
 function register(navegador) {
     const containerRegister = document.createElement('section');
     const containerLogo = document.createElement('div');
@@ -49,24 +55,24 @@ function register(navegador) {
     inputNewPassword.classList.add('inputNewPassword');
     buttonSignUp.classList.add('buttonSignUp');
 
-    logoHaku.setAttribute('src', '/assets/logo-haku-white.png');
+    logoHaku.setAttribute('src', logoWR);
     logoHaku.setAttribute('alt', 'Haku Social Network Logo');
-    imgBack.setAttribute('src', '/assets/back.png');
+    imgBack.setAttribute('src', iconBck);
     imgBack.setAttribute('alt', 'Icon back');
     formRegister.setAttribute('id', 'form-register');
-    inputIconName.setAttribute('src', '/assets/icon-user-grey.png')
+    inputIconName.setAttribute('src', userGrey)
     inputIconName.setAttribute('alt', 'User icon')
     inputName.setAttribute('id', 'inputFirstName' );
     inputName.setAttribute('type', 'text' );
     inputName.setAttribute('placeholder', 'NAME' );
     inputName.setAttribute('required', '');
-    inputIconEmail.setAttribute('src', '/assets/email.png')
+    inputIconEmail.setAttribute('src', emailR)
     inputIconEmail.setAttribute('alt', 'Email icon')
     input_Email.setAttribute('id', 'input-email');
     input_Email.setAttribute('type', 'email');
     input_Email.setAttribute('placeholder', 'EMAIL');
     input_Email.setAttribute('required', '');
-    inputIcon_Password.setAttribute('src', '/assets/icon-password-grey.png');
+    inputIcon_Password.setAttribute('src', passGrey);
     inputIcon_Password.setAttribute('alt', 'Secret key icon');
     input_Password.setAttribute('id', 'input-password');
     input_Password.setAttribute('type', 'password');
@@ -74,7 +80,7 @@ function register(navegador) {
     input_Password.setAttribute('minlength', '6');
     input_Password.setAttribute('maxlength', '12');
     input_Password.setAttribute('required', '');
-    inputIconNewPassword.setAttribute('src', '/assets/icon-password-grey.png');
+    inputIconNewPassword.setAttribute('src', passGrey);
     inputIconNewPassword.setAttribute('alt', 'Secret key icon');
     inputNewPassword.setAttribute('id', 'inputNewPassword');
     inputNewPassword.setAttribute('type', 'password');

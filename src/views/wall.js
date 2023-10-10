@@ -1,5 +1,12 @@
-import { savePosts,onGetPosts,onGetUserData,deletePost,getPost,updatePost} from "../firebase/firebase";
+import { savePosts,onGetPosts,onGetUserData,deletePost,getPost,updatePost} from "../firebase/firebase.js";
 import "../styles/wall.css";
+import  logoBlack from '../assets/logo-haku-black.png'
+import  icoVideo from '../assets/icon-video.png'
+import  icoPicture from '../assets/icon-picture.png'
+import  icoPoll from '../assets/icon-poll.png'
+import  iHome from '../assets/home.png'
+import  iUser from '../assets/user.png'
+
 function wall(navigator) {
     const containerWall = document.createElement('section');
     const divContainerProfile = document.createElement('div');
@@ -35,20 +42,20 @@ function wall(navigator) {
     iconPoll.classList.add('iconPoll');
     articlePost.classList.add('articlePost');
 
-    img_logo.setAttribute('src', '/assets/logo-haku-black.png');
+    img_logo.setAttribute('src', logoBlack);
     img_logo.setAttribute('alt', 'Haku Social Network Logo');
     imgProfile2.setAttribute('alt', 'User profile photo');
     buttonWrite.setAttribute('type', 'button');
-    iconVideo.setAttribute('src', '/assets/icon-video.png');
+    iconVideo.setAttribute('src', icoVideo);
     iconVideo.setAttribute('alt', 'Video icon');
-    iconPicture.setAttribute('src', '/assets/icon-picture.png');
+    iconPicture.setAttribute('src', icoPicture);
     iconPicture.setAttribute('alt', 'Picture icon');
-    iconPoll.setAttribute('src', '/assets/icon-poll.png');
+    iconPoll.setAttribute('src', icoPoll);
     iconPoll.setAttribute('alt', 'Purvey icon');
 
 
-    a_Home.innerHTML = `<img src="/assets/home.png" alt="House icon">Home</a>`
-    a_Profile.innerHTML = `<img src="/assets/user.png" alt="User icon">Profile</a>`
+    a_Home.innerHTML = `<img src=${iHome} alt="House icon">Home</a>`
+    a_Profile.innerHTML = `<img src=${iUser} alt="User icon">Profile</a>`
     buttonWrite.textContent = 'Write something...';
 
     //Pop up - Crear post

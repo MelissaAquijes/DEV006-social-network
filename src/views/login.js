@@ -1,5 +1,9 @@
 import { LoginWithGoogle, loginEmailPassword, onGetUserData, deleteUser } from "../firebase/firebase.js";
 import "../styles/login.css";
+import  logoW from '../assets/logo-haku-white.png'
+import  iconUser from '../assets/icon-user.png'
+import  iconPassword from '../assets/icon-password.png'
+import  iconGoogle from '../assets/icon-google.png'
 
 function login(navigator) {
     const containerLogin = document.createElement('section');
@@ -54,16 +58,16 @@ function login(navigator) {
     sectionIconApp.classList.add('sectionIconApp');
     imgIconGoogle.classList.add('imgIconGoogle');
 
-    imgLogo.setAttribute('src','/assets/logo-haku-white.png');
+    imgLogo.setAttribute('src', logoW);
     imgLogo.setAttribute('alt','Haku Social Network Logo');
     form.setAttribute('id', 'signIn-form');
-    inputIconUser.setAttribute('src','/assets/icon-user.png')
+    inputIconUser.setAttribute('src', iconUser)
     inputIconUser.setAttribute('alt','User icon')
     inputEmail.setAttribute('id', 'inputEmail');
     inputEmail.setAttribute('type', 'email');
     inputEmail.setAttribute('placeholder', 'EMAIL');
     inputEmail.setAttribute('required', '');
-    inputIconPassword.setAttribute('src','/assets/icon-password.png');
+    inputIconPassword.setAttribute('src', iconPassword);
     inputIconPassword.setAttribute('alt', 'Secret key icon');
     inputPassword.setAttribute('id', 'inputPassword');
     inputPassword.setAttribute('type', 'password');
@@ -73,7 +77,7 @@ function login(navigator) {
     inputPassword.setAttribute('required', '');
     msgEmailPassword.setAttribute('id', 'msg_Email');
     buttonSingIn.setAttribute('type', 'submit');
-    imgIconGoogle.setAttribute('src', '/assets/icon-google.png');
+    imgIconGoogle.setAttribute('src', iconGoogle);
     imgIconGoogle.setAttribute('alt', 'Google logo');
 
     buttonSingIn.textContent = 'Sign In';
@@ -84,6 +88,7 @@ function login(navigator) {
     //trayendo datos del Usuario anterior
     let userIdLogin=""
     let user=""
+
     onGetUserData((responseUserData)=>{
         responseUserData.forEach(element=>{
             user=element
@@ -99,7 +104,6 @@ function login(navigator) {
         navigator('/password')
     })
 
-
     buttonSingIn.addEventListener('click', (e) => {
         e.preventDefault();
         loginEmailPassword(navigator);
@@ -107,7 +111,6 @@ function login(navigator) {
             deleteUser(userIdLogin)
         }
     })
-
 
     imgIconGoogle.addEventListener('click', () => {
         LoginWithGoogle(navigator);

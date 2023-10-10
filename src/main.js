@@ -1,4 +1,4 @@
-import { navigateTo } from "./lib/router";
+import { navigateTo } from "./lib/router.js";
 
 
 const defaultRoute = '/';

@@ -1,5 +1,9 @@
 import { restorePassword } from "../firebase/firebase.js";
 import "../styles/password.css";
+import  logoW from '../assets/logo-haku-white.png'
+import  imgBack from '../assets/back.png'
+import  imgEmail from '../assets/email.png'
+
 function password(navigateTo) {
     const containerForgotPassword = document.createElement('section');
     const divContainerLogo = document.createElement('div');
@@ -29,11 +33,11 @@ function password(navigateTo) {
     message_email.classList.add('message_email');
     buttonRecoverPassword.classList.add('buttonRecoverPassword');
 
-    img_Logo.setAttribute('src', '/assets/logo-haku-white.png');
+    img_Logo.setAttribute('src', logoW);
     img_Logo.setAttribute('alt', 'Haku Social Network Logo');
-    img_back.setAttribute('src', '/assets/back.png');
+    img_back.setAttribute('src', imgBack);
     img_back.setAttribute('alt', 'Icon back');
-    inputIcon_Email.setAttribute('src', '/assets/email.png');
+    inputIcon_Email.setAttribute('src', imgEmail);
     inputIcon_Email.setAttribute('alt', 'Email icon');
     input_email.setAttribute('id', 'emailRegister');
     input_email.setAttribute('type', 'email');
