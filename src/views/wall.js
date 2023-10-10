@@ -6,6 +6,12 @@ import  icoPicture from '../assets/icon-picture.png'
 import  icoPoll from '../assets/icon-poll.png'
 import  iHome from '../assets/home.png'
 import  iUser from '../assets/user.png'
+import  iconClose from '../assets/close.png'
+import  iconDots from '../assets/icon-three-dots.png'
+import  iconEdit from '../assets/edit.png'
+import  iconDelete from '../assets/delete.ico'
+import  iconHeart from '../assets/icon-heart-red.png'
+import  iconComment from '../assets/icon-comment.png'
 
 function wall(navigator) {
     const containerWall = document.createElement('section');
@@ -75,7 +81,7 @@ function wall(navigator) {
     inputCreatePost.classList.add('inputCreatePost');
     btnCreatePost.classList.add('btnCreatePost');
 
-    modalClose.setAttribute('src', '/assets/close.png');
+    modalClose.setAttribute('src', iconClose);
     modalClose.setAttribute('alt', 'Close icon');
     formCreatePost.setAttribute('id', 'idFormPost');
     inputCreatePost.setAttribute('placeholder', 'Write here...');
@@ -135,15 +141,15 @@ function wall(navigator) {
                     <div class="divContainerUser" id="divContenedorxD">
                             <img class="imgProfile3" src="${post.imageUser}" alt="">
                             <h2 class="nameUser">${post.nameUser}</h2>
-                            <img class="postIconOptions"  src="/assets/icon-three-dots.png" alt="Ellipsis icon">
+                            <img class="postIconOptions" src=${iconDots} alt="Ellipsis icon">
                             <div class="postMenuOptions">
                                 <div class="buttonEdit" data-id="${element.id}">
                                     <a data-id="${element.id}">Edit</a>
-                                    <img src="/assets/edit.png" data-id="${element.id}">
+                                    <img src=${iconEdit} data-id="${element.id}">
                                 </div>
                                 <div class="buttonDelete" data-id="${element.id}">
                                     <a data-id="${element.id}">Delete</a>
-                                    <img src="/assets/delete.ico" data-id="${element.id}">
+                                    <img src=${iconDelete} data-id="${element.id}">
                                 </div>
                             </div>
                     </div>
@@ -153,9 +159,9 @@ function wall(navigator) {
                     <div class="ContainerDetailsPadre">
                         <div class="containerDetails">
                             <span class="number" data-id="${element.id}">${post.likeCounter}</span>
-                            <img class="iconHeart" src="/assets/icon-heart-red.png" alt="Heart icon">
+                            <img class="iconHeart" src=${iconHeart} alt="Heart icon">
                             <span class="iLike" data-id="${element.id}">I like</span>
-                            <img class="iconComment" src="/assets/icon-comment.png" alt="Feedback icon">
+                            <img class="iconComment" src=${iconComment} alt="Feedback icon">
                             <p class="comment">Comment</p>
                         </div>
                     </div>
@@ -187,13 +193,6 @@ function wall(navigator) {
                         updatePost(e.target.dataset.id,{likeCounter:likeContador})
                     }
                 })
-
-                iconsHeart.forEach((icon,indexIcon) =>{
-                    if(index === indexIcon){
-                        icon.removeAttribute("src");
-                        icon.setAttribute('src', '/assets/icon-heart-red.png');
-                    }
-                });
             });
         });
 
